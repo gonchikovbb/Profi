@@ -18,7 +18,7 @@ class BlogFactory extends Factory
     {
         return [
             'title' => $this->faker->title,
-            'date' => $this->faker->dateTimeThisMonth()->format('Y-m-d'),
+            'date' => $this->faker->date(),
             'content' => $this->faker->text(),
         ];
     }

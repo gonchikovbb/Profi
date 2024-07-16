@@ -10,8 +10,13 @@ class Blog extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'title',
         'date',
         'content',
+    ];
+
+    protected $casts = [
+        'date' => 'date',
     ];
 }
