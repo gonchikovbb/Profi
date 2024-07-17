@@ -26,6 +26,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::resource('blogs', BlogController::class);
 
 // Задание 2. Отправка сообщения на почту
-Route::post('mail',[UserController::class,'send']);
+Route::post('mail',[UserController::class,'sendMail']);
 
+// Задание 3. Отправка сообщения в телеграм
+Route::post('telegram',[UserController::class,'sendTelegram']);
 

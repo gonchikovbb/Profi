@@ -14,8 +14,13 @@ class UserController extends Controller
         $this->mailService = $mailService;
     }
 
-   public function send(Request $request)
+   public function sendMail(Request $request)
    {
        return $this->mailService->sendMail($request);
+   }
+
+   public function sendTelegram(Request $request)
+   {
+       return $this->mailService->sendTelegramBot($request);
    }
 }
