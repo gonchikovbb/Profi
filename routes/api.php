@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\UserController;
 use App\Http\Resources\BlogResource;
 use App\Models\Blog;
 use Illuminate\Http\Request;
@@ -21,17 +22,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
+// Задание 1. CRUD для Блога
 Route::resource('blogs', BlogController::class);
 
-///** Получение всех записей */
-//Route::get('index', [BlogController::class,'index']);
-//
-///** Добавление записи*/
-//Route::post('add', [BlogController::class,'store']);
-//
-///** Редактирование записи по id */
-//Route::put('edit/{id}', [BlogController::class,'update']);
-//
-///** Удаление записи по id */
-//Route::delete('delete/{id}', [BlogController::class,'destroy']);
+// Задание 2. Отправка сообщения на почту
+Route::post('mail',[UserController::class,'send']);
+
+
